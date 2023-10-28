@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "~@flaticon/flaticon-uicons/css/Solid/Straight";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -15,7 +16,9 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
-
+/* *{
+  @apply outline-1 outline-dashed outline-red-400
+} */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +27,45 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+i{
+  @apply flex items-center 
+}
+
+table >thead{
+  @apply bg-gray-950 text-white font-semibold capitalize
+}
+table > thead th{
+  @apply px-4 text-left
+}
+th >div{
+  @apply py-3
+}
+
+tbody > tr:nth-child(2n){
+  @apply bg-[#f4f9ff]
+}
+tbody>tr>td{
+  @apply px-4 py-3
+}
+label{
+  @apply duration-150 ease-out
+}
+input:focus{
+  @apply outline-none
+}
+.input-container:focus-within >label{
+  @apply top-2 text-xs
+}
+input:not(:placeholder-shown) + label{
+  @apply top-2 text-xs
+}
+input::placeholder{
+  @apply opacity-0
+}
+div.selection > div{
+  @apply duration-100 ease-out
+}
+div.selection > div:hover{
+  @apply bg-gray-200 cursor-pointer
 }
